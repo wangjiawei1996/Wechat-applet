@@ -1,0 +1,7 @@
+<view>
+  <image style="width: 200rpx;height: 200rpx;border-radius: 50%"src="../../images/avatar.jpg"></image>
+  <text>Hello Anthony</text>
+  <view>
+    <text>开启小程序之旅</text>
+  </view>
+</view>
