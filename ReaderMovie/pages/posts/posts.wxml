@@ -1,0 +1,13 @@
+<view>
+  <swiper indicator-dots="true" autoplay="true" interval="3000" indicator-color="#ccc">
+    <swiper-item>
+      <image src="../../images/book.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/coco.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/party.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>
