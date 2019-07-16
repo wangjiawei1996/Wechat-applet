@@ -10,34 +10,21 @@
       <image src="../../images/party.jpg"></image>
     </swiper-item>
   </swiper>
-  <view class="post-container">
-    <view class="post-author-date">
-      <image wx:if="{{img_condition}}" class="post-author" src="{{img.author_img}}"></image>
-      <text class="post-date">{{date}}</text>
+  <block wx:for="{{post_key}}" wx:for-item="item" wx:key="item">
+    <view class="post-container">
+      <view class="post-author-date">
+        <image class="post-author" src="{{item.author_img}}"></image>
+        <text class="post-date">{{item.date}}</text>
+      </view>
+      <text class="post-title">{{item.title}}</text>
+      <image class="post-image"src="{{item.post_img}}"></image>
+      <text class="post-content">{{item.content}}</text>
+      <view class="post-like">
+        <image class="post-like-image"src="../icon/view.png"></image>
+        <text class="post-like-font">{{item.view_num}}</text>
+        <image class="post-like-image" src="../icon/chat.png"></image>
+        <text class="post-like-font">{{item.collect_num}}</text>
+      </view>
     </view>
-    <text class="post-title">{{title}}</text>
-    <image class="post-image"src="{{img.post_img}}"></image>
-    <text class="post-content">{{content}}</text>
-    <view class="post-like">
-      <image class="post-like-image"src="../icon/view.png"></image>
-      <text class="post-like-font">{{view_num}}</text>
-      <image class="post-like-image" src="../icon/chat.png"></image>
-      <text class="post-like-font">{{collect_num}}</text>
-    </view>
-  </view>
-  <view class="post-container">
-    <view class="post-author-date">
-      <image class="post-author" src="../../images/avatar/2.jpg"></image>
-      <text class="post-date">June 26 2019</text>
-    </view>
-    <text class="post-title">Beijing 2019</text>
-    <image class="post-image"src="../../images/post/tianandoor.jpg"></image>
-    <text class="post-content">2019年是中国人民共产党成立70周年，10月1日将在天安门前举行盛大的阅兵仪式，届时我国新型武器将会亮相，会深受世界人民的关注</text>
-    <view class="post-like">
-      <image class="post-like-image"src="../icon/view.png"></image>
-      <text class="post-like-font">112</text>
-      <image class="post-like-image" src="../icon/chat.png"></image>
-      <text class="post-like-font">78</text>
-    </view>
-  </view>
+  </block>
 </view>
