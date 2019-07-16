@@ -12,11 +12,11 @@
   </swiper>
   <view class="post-container">
     <view class="post-author-date">
-      <image class="post-author" src="{{author_img}}"></image>
+      <image wx:if="{{img_condition}}" class="post-author" src="{{img.author_img}}"></image>
       <text class="post-date">{{date}}</text>
     </view>
     <text class="post-title">{{title}}</text>
-    <image class="post-image"src="{{post_img}}"></image>
+    <image class="post-image"src="{{img.post_img}}"></image>
     <text class="post-content">{{content}}</text>
     <view class="post-like">
       <image class="post-like-image"src="../icon/view.png"></image>
