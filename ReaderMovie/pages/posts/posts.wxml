@@ -28,16 +28,16 @@
   <view class="post-container">
     <view class="post-author-date">
       <image class="post-author" src="../../images/avatar/2.jpg"></image>
-      <text class="post-date">Orject 26 2018</text>
+      <text class="post-date">June 26 2019</text>
     </view>
-    <text class="post-title">VueConf in Hangzhou</text>
-    <image class="post-image"src="../../images/post/withyyx.jpg"></image>
-    <text class="post-content">VueConf 2019 成功在杭州交金奕影城举办，Vue作者尤雨溪亲自到达现场，和各位开发者们一起分享了Vue3.0的进展，并在会后和大家签名合影留念</text>
+    <text class="post-title">Beijing 2019</text>
+    <image class="post-image"src="../../images/post/tianandoor.jpg"></image>
+    <text class="post-content">2019年是中国人民共产党成立70周年，10月1日将在天安门前举行盛大的阅兵仪式，届时我国新型武器将会亮相，会深受世界人民的关注</text>
     <view class="post-like">
       <image class="post-like-image"src="../icon/view.png"></image>
-      <text class="post-like-font">92</text>
+      <text class="post-like-font">112</text>
       <image class="post-like-image" src="../icon/chat.png"></image>
-      <text class="post-like-font">65</text>
+      <text class="post-like-font">78</text>
     </view>
   </view>
 </view>
