@@ -12,17 +12,17 @@
   </swiper>
   <view class="post-container">
     <view class="post-author-date">
-      <image class="post-author" src="../../images/avatar/1.jpg"></image>
-      <text class="post-date">July 15 2019</text>
+      <image class="post-author" src="{{author_img}}"></image>
+      <text class="post-date">{{date}}</text>
     </view>
-    <text class="post-title">VueConf in Shanghai</text>
-    <image class="post-image"src="../../images/post/me.jpg"></image>
-    <text class="post-content">VueConf 2019 成功在上海交通大学徐汇校区举办，Vue作者尤雨溪亲自到达现场，和各位开发者们一起分享了Vue3.0的进展，并在会后和大家签名合影留念</text>
+    <text class="post-title">{{title}}</text>
+    <image class="post-image"src="{{post_img}}"></image>
+    <text class="post-content">{{content}}</text>
     <view class="post-like">
       <image class="post-like-image"src="../icon/view.png"></image>
-      <text class="post-like-font">92</text>
+      <text class="post-like-font">{{view_num}}</text>
       <image class="post-like-image" src="../icon/chat.png"></image>
-      <text class="post-like-font">65</text>
+      <text class="post-like-font">{{collect_num}}</text>
     </view>
   </view>
   <view class="post-container">
