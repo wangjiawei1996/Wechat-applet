@@ -18,10 +18,13 @@ var local_database = [
   }, {
     data:"Jan 7 2019",
     title: "My Computer World",
-    imgSrc: "../../images/computer.jpg",
+    imgSrc: "../../images/post/computer.jpg",
     avatar: "../../images/avatar/4.jpg",
     content: "2019年当我买到精通CSS这本书之后，那天晚上心情很愉快，就拍了我都书桌，觉得很有一个仪式感，为新书的进入也算吗起了个好的开头",
     reading: "201",
     collection: "138"
   }
 ]
+module.exports = {
+  postList: local_database
+}
