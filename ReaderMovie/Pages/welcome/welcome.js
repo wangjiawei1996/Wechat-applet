@@ -1,5 +1,5 @@
 Page({
-  onTap: function() {
+  onContainerTap: function() {
     wx.redirectTo({
       url: '../posts/posts'
     })
