@@ -16,7 +16,7 @@ var local_database = [
     reading: "112",
     collection: "78"
   }, {
-    data:"Jan 7 2019",
+    date:"Jan 7 2019",
     title: "My Computer World",
     imgSrc: "../../images/post/computer.jpg",
     avatar: "../../images/avatar/4.jpg",
