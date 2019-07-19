@@ -1,5 +1,6 @@
 <view class="container">
   <image class="head-image" src="/images/post/withyyx.jpg"></image>
+  <image class="audio" src="/images/music/music-start.png"></image>
   <view class="author-date">
     <image class="avatar" src="/images/avatar/1.jpg"></image>
     <text class="author">Anthony</text>
