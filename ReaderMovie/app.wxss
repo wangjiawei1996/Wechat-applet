@@ -1,6 +1,7 @@
 text {
   font-family: MicroSoft Yahei;
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
+  font-size: 24rpx;
 }
