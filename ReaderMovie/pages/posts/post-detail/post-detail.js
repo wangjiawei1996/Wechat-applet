@@ -1,18 +1,35 @@
 var postsData = require('../../../data/post-data')
 Page({
+  data: {
+
+  },
   onLoad: function(option) {
     var postId = option.id;
+    this.setData({
+      currentPostId: postId
+    })
     var postData = postsData.postList[postId];
     this.setData(postData);
-    wx.setStorageSync('key', {
-      game: "风暴",
-      developer: "暴雪"
-    })
+    var postsCollected = wx.getStorageSync('posts_collected')
+    if (postsCollected) {
+      var postCollected = postsCollected[postId]
+      this.setData({
+        collected: postCollected
+      })
+    } else{
+      var postsCollected = {}
+      postsCollected[postId] = false;
+      wx.setStorageSync('posts_collected', postsCollected)
+    }
   },
   onCollectionTap: function(event) {
-    var game = wx.getStorageSync('key')
-  },
-  onShareTap: function(event) {
-    wx.removeStorageSync('key')
+    var postsCollected = wx.getStorageSync('posts_collected');
+    var postCollected = postsCollected[this.data.currentPostId];
+    postCollected = !postCollected;
+    postsCollected[this.data.currentPostId] = postCollected;
+    wx.setStorageSync('posts_collected', postsCollected);
+    this.setData({
+      collected: postCollected
+    });
   }
 })
