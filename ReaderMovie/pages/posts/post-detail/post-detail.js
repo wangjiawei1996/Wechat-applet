@@ -58,5 +58,23 @@ Page({
         }
       }
     })
+  },
+  onShareTap: function(event) {
+    var itemList = [
+      "分享给微信好友",
+      "分享到朋友圈",
+      "分享到QQ好友",
+      "分享到微博"
+    ]
+    wx.showActionSheet({
+      itemList: itemList ,
+      itemColor: '#405f80',
+      success: function(res) {
+        wx.showModal({
+          title: '用户' + itemList[res.tapIndex],
+          content: '用户是否取消?' + res.cancel + '实现分享功能',
+        })
+      }
+    })
   }
 })
