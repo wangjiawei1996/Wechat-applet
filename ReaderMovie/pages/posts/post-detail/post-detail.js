@@ -23,6 +23,22 @@ Page({
     }
   },
   onCollectionTap: function(event) {
+    this.getPostsCollectedSyc(); 
+  },
+  // getPostsCollectedAsy: function() {
+  //   var that = this;
+  //   wx.getStorage({
+  //     key: 'posts_collected',
+  //     success: function(res) {
+  //       var postsCollected = res.data;
+  //       var postCollected = postsCollected[that.data.currentPostId];
+  //       postCollected = !postCollected;
+  //       postsCollected[that.data.currentPostId] = postCollected;
+  //       that.showToast(postsCollected, postCollected)
+  //     }
+  //   })
+  // },
+  getPostsCollectedSyc: function() {
     var postsCollected = wx.getStorageSync('posts_collected');
     var postCollected = postsCollected[this.data.currentPostId];
     postCollected = !postCollected;
