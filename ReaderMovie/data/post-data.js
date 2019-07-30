@@ -15,7 +15,7 @@ var local_database = [
     music: {
       url: 'http://www.170mv.com/kw/antiserver.kuwo.cn/anti.s?rid=MUSIC_56736979&response=res&format=mp3|aac&type=convert_url&br=128kmp3&agent=iPhone&callback=getlink&jpcallback=getlink.mp3',
       title: 'PopStar',
-      coverImgUrl: 'https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=popstar%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F&step_word=&hs=0&pn=8&spn=0&di=25080&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=4290013275%2C3600974309&os=1541071257%2C3706878731&simid=4234419772%2C680214104&adpicid=0&lpn=0&ln=225&fr=&fmq=1564394789127_R&fm=&ic=undefined&s=undefined&hd=undefined&latest=undefined&copyright=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=http%3A%2F%2Fp2.music.126.net%2FK9Ush0UgQ4sKQApHBa8r1A%3D%3D%2F109951163790600768.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3F47ftv_z%26e3B8mn_z%26e3Bv54AzdH3Ff5g2%3Ft1%3D8nnln9mllm%267fj6t1%3D9bm9d00ma%26u654%3Dpt4jstgj&gsm=0&rpstart=0&rpnum=0&islist=&querylist=&force=undefined'
+      coverImgUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564488755689&di=29fe2b8bb79e4645ae191d451aa6c644&imgtype=0&src=http%3A%2F%2Fp1.music.126.net%2FRzVEoJgDnCoRIvwIvuvXUQ%3D%3D%2F109951163748592297.jpg'
     }
   }, {
     date:"June 26 2019",
