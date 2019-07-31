@@ -1,9 +1,11 @@
 var postsData = require('../../../data/post-data')
+var app = getApp();
 Page({
   data: {
     isPlayingMusic: false
   },
   onLoad: function(option) {
+    var globalData = app.globalData
     var postId = option.id;
     this.setData({
       currentPostId: postId
