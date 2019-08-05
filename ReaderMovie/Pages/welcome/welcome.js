@@ -1,5 +1,5 @@
 Page({
-  onContainerTap: function() {
+  onContainerTap: function(event) {
     wx.navigateTo({
       url: '../posts/posts'
     })
