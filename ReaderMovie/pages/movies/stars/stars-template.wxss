@@ -1,0 +1,10 @@
+.stars-container {
+  display: flex;
+  flex-direction: row
+}
+.stars {
+  display: flex;
+  flex-direction: row;
+  height: 17rpx;
+  margin-right: 24rpx;
+}
