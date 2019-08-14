@@ -1,7 +1,7 @@
 Page({
   onLoad: function(event) {
     wx.request({
-      url: 'http://v.juhe.cn/movie/index',
+      url: '',
       header: {
         'Content-Type': 'application/json'
       },
