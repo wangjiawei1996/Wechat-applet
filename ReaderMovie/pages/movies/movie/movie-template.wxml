@@ -1,8 +1,8 @@
 <import src="../stars/stars-template.wxml"></import>
 <template name="movieTemplate">
   <view class="movie-container">
-    <image class="movie-img" src="//n.sinaimg.cn/ent/transform/75/w560h315/20190803/4ebd-iatixpk6299867.jpg"></image>
-    <text class="movie-title">烈火英雄</text>
-    <template is="starTemplate" />
+    <image class="movie-img" src="{{coverageUrl}}"></image>
+    <text class="movie-title">{{title}}</text>
+    <template is="starTemplate" data="{{average}}" />
   </view>
 </template>
