@@ -1,7 +1,14 @@
 Page({
-  data: {},
+  data: {
+    navigateTitle: '',
+  },
   onLoad: function(options){
     var category = options.category;
-    console.log(category)
+    this.data.navigateTitle = category
+  },
+  onReady: function(event) {
+    wx.setNavigationBarTitle({
+      title: this.data.navigateTitle
+    })
   }
 })
