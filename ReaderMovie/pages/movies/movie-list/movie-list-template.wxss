@@ -17,6 +17,7 @@
   font-size: 24rpx;
 }
 .more {
+  margin-top: 0;
   float: right;
 }
 .more-text {

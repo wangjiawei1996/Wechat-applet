@@ -28,6 +28,12 @@ Page({
       }
     })
   },
+  onMoreTap: function(event) {
+    var category = event.currentTarget.dataset.category
+    wx.navigateTo({
+      url: 'more-movie/more-movie?category='+category
+    })
+  },
   processDoubanData: function(moviesDouban, settedKey, categoryTitle) {
     var movies = [];
     for(var idx in moviesDouban.subjects) {
