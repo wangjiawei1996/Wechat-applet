@@ -25,7 +25,8 @@ function http(url,callBack,data,method){
     }
   })
 }
+
 module.exports = {
-  convertToStarsArray:convertToStarsArray,
-  http: http
+convertToStarsArray: convertToStarsArray,
+http: http
 }
