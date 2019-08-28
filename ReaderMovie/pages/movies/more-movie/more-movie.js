@@ -3,7 +3,10 @@ var util = require("../../../utils/utils.js");
 Page({
   data: {
     movies: {},
-    navigateTitle: ''
+    navigateTitle: '',
+    requestUrl: "",
+    totalCount: 0,
+    isEmpty: true
   },
   onLoad: function(options){
     var category = options.category;
@@ -28,6 +31,7 @@ Page({
   },
   onScrollLower: function(event) {
     var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
+    util.http(nextUrl, this.processDoubanData )
   },
   processDoubanData: function(moviesDouban) {
     var movies = [];
@@ -46,9 +50,18 @@ Page({
       }
       movies.push(temp);
     }
+    var totalMovies = {},
+    if (!this.data.isEmpty) {
+      totalMovies = this.data.movies.concar(movies)
+    }
+    else {
+      totalMovies = movies;
+      this.data.isEmpty = false;
+    }
     this.setData({
-      movies: movies
+      movies: totalMovies
     })
+    this.data.totalCount += 20;
   },
   onReady: function(event) {
     wx.setNavigationBarTitle({
