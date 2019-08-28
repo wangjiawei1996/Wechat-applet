@@ -23,7 +23,11 @@ Page({
           "/v2/movie/top250";
         break;
     }
+    this.data.requestUrl = dataUrl;
     util.http(dataUrl, this.processDoubanData )
+  },
+  onScrollLower: function(event) {
+    var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
   },
   processDoubanData: function(moviesDouban) {
     var movies = [];
