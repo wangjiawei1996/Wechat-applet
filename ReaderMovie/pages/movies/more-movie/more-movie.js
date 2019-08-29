@@ -50,18 +50,19 @@ Page({
       }
       movies.push(temp);
     }
-    var totalMovies = {},
+    var totalEmpty = {};
     if (!this.data.isEmpty) {
-      totalMovies = this.data.movies.concar(movies)
-    }
-    else {
-      totalMovies = movies;
-      this.data.isEmpty = false;
+      totalEmpty = this.data.movies.concat(movies);
+    } else {
+      totalEmpty = movies;
+      this.setData({
+        isEmpty: false
+      })
     }
     this.setData({
-      movies: totalMovies
+      movies: totalEmpty,
+      totalCount: this.data.totalCount += 20
     })
-    this.data.totalCount += 20;
   },
   onReady: function(event) {
     wx.setNavigationBarTitle({
