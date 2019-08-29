@@ -28,11 +28,22 @@ Page({
     }
     this.data.requestUrl = dataUrl;
     util.http(dataUrl, this.processDoubanData )
-    wx.showNavigationBarLoading()
   },
   onScrollLower: function(event) {
     var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
     util.http(nextUrl, this.processDoubanData )
+    wx.showNavigationBarLoading()
+  },
+  onPullDownRefresh: function () {
+    this.setData({
+      movies: {},
+      isEmpty: true
+    })
+    var refreshUrl = this.data.requestUrl +
+      "?start=0&count=20";
+    util.http(refreshUrl, this.processDoubanData);
+    //显示标题栏加载样式
+    wx.showNavigationBarLoading();
   },
   processDoubanData: function(moviesDouban) {
     var movies = [];
@@ -64,6 +75,7 @@ Page({
       movies: totalEmpty,
       totalCount: this.data.totalCount += 20
     })
+    wx.stopPullDownRefresh();
     wx.hideNavigationBarLoading();
   },
   onReady: function(event) {
