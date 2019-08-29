@@ -1,3 +1,4 @@
 {
-  "enablePullDownReFresh" : "true"
+  "enablePullDownReFresh" : "true",
+  "backgroundColor": "red"
 }
