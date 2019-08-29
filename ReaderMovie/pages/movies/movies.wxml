@@ -1,5 +1,9 @@
 <import src="movie-list/movie-list-template.wxml" />
-<view class="container">
+<view class="search">
+  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+  <input placeholder="烈火英雄、哪吒" placeholder-class="placeholder" bindfocus="onBindFocus" bindchange="onBindChange" />
+</view>
+<view class="container" wx:if="{{containerShow}}">
   <view class="movies-template">
     <template is="movieListTemplate" data="{{...inTheater}}"></template>
   </view>
@@ -9,4 +13,7 @@
   <view class="movies-template">
     <template is="movieListTemplate" data="{{...top250}}"></template>
   </view>
+</view>
+<view class="search-panel" wx:if="{{searchPanelShow}}">
+  <template is="movieGridTemplate"></template>
 </view>

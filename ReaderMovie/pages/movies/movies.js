@@ -4,7 +4,9 @@ Page({
   data: {
     inTheaters: {},
     commingSoon: {},
-    top250Url: {}
+    top250Url: {},
+    containerShow: true,
+    searchPanelShow: false
   },
   onLoad: function(event) {
     var inTheatersUrl = app.globalData.doubanBase + "/v2/movie/in_theaters" + "?start=0&count=3";
@@ -32,6 +34,12 @@ Page({
     var category = event.currentTarget.dataset.category
     wx.navigateTo({
       url: 'more-movie/more-movie?category='+category
+    })
+  },
+  onBindFocus: function(event) {
+    this.setData({
+      containerShow: false,
+      searchPanelShow: true
     })
   },
   processDoubanData: function(moviesDouban, settedKey, categoryTitle) {
