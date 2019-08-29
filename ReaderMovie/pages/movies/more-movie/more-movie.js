@@ -28,6 +28,7 @@ Page({
     }
     this.data.requestUrl = dataUrl;
     util.http(dataUrl, this.processDoubanData )
+    wx.showNavigationBarLoading()
   },
   onScrollLower: function(event) {
     var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
@@ -63,6 +64,7 @@ Page({
       movies: totalEmpty,
       totalCount: this.data.totalCount += 20
     })
+    wx.hideNavigationBarLoading();
   },
   onReady: function(event) {
     wx.setNavigationBarTitle({
