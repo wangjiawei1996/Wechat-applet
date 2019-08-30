@@ -36,6 +36,13 @@ Page({
       url: 'more-movie/more-movie?category='+category
     })
   },
+  onCancelImgTap: function(event) {
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+      searchResult: {}
+    })
+  },
   onBindFocus: function(event) {
     this.setData({
       containerShow: false,
