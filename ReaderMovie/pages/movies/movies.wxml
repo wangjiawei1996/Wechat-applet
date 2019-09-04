@@ -1,7 +1,7 @@
 <import src="movie-list/movie-list-template.wxml" />
 <view class="search">
   <icon type="search" class="search-img" size="13" color="#405f80"></icon>
-  <input placeholder="烈火英雄、哪吒" placeholder-class="placeholder" bindfocus="onBindFocus" bindchange="onBindChange" />
+  <input placeholder="烈火英雄、哪吒" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindChange" />
   <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
 </view>
 <view class="container" wx:if="{{containerShow}}">
@@ -16,5 +16,5 @@
   </view>
 </view>
 <view class="search-panel" wx:if="{{searchPanelShow}}">
-  <template is="movieGridTemplate"></template>
+  <template is="movieGridTemplate" data="{{...searchResult}}"></template>
 </view>
