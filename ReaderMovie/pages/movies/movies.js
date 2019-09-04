@@ -50,7 +50,7 @@ Page({
       searchPanelShow: true
     })
   },
-  onBindChange: function(event) {
+  onBindBlur: function(event) {
     var text = event.detail.value;
     var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
     this.getMovieListData(searchUrl, "searchResult", "")
