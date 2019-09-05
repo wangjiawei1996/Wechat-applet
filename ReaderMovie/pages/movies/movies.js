@@ -37,6 +37,12 @@ Page({
       url: 'more-movie/more-movie?category='+category
     })
   },
+  onMovieTap: function(event) {
+    var movieId = event.currentTarget.dataset.movieid
+    wx.navigateTo({
+      url: 'more-movie/more-movie?id=' + movieId
+    })
+  },
   onCancelImgTap: function(event) {
     this.setData({
       containerShow: true,
