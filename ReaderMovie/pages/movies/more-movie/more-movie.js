@@ -41,6 +41,7 @@ Page({
     })
     var refreshUrl = this.data.requestUrl +
       "?start=0&count=20";
+    this.data.totalCount = 0;
     util.http(refreshUrl, this.processDoubanData);
     //显示标题栏加载样式
     wx.showNavigationBarLoading();
