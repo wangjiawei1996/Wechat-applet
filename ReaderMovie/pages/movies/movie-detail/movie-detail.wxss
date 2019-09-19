@@ -87,6 +87,9 @@
   flex-direction: column;
   margin-top: 50rpx;
 }
+.synopsis-font {
+  color: #999;
+}
 .summary-content {
   margin-top: 20rpx;
   margin-right: 40rpx;
