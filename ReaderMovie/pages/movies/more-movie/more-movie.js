@@ -1,18 +1,21 @@
-var app = getApp()
-var util = require("../../../utils/utils.js");
+var util = require("../../../utils/util.js");
+var app = getApp();
 Page({
   data: {
     movies: {},
-    navigateTitle: '',
+    navigateTitle: "",
     requestUrl: "",
     totalCount: 0,
-    isEmpty: true
+    isEmpty: true,
+    isLoading: false
   },
-  onLoad: function(options){
+  onLoad: function (options) {
     var category = options.category;
-    this.data.navigateTitle = category;
+    this.setData({
+      navigateTitle: category
+    });
     var dataUrl = "";
-    switch(category) {
+    switch (category) {
       case "正在热映":
         dataUrl = app.globalData.doubanBase +
           "/v2/movie/in_theaters";
@@ -26,27 +29,12 @@ Page({
           "/v2/movie/top250";
         break;
     }
-    this.data.requestUrl = dataUrl;
-    util.http(dataUrl, this.processDoubanData )
-  },
-  onScrollLower: function(event) {
-    var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
-    util.http(nextUrl, this.processDoubanData )
-    wx.showNavigationBarLoading()
-  },
-  onPullDownRefresh: function () {
     this.setData({
-      movies: {},
-      isEmpty: true
+      requestUrl: dataUrl
     })
-    var refreshUrl = this.data.requestUrl +
-      "?start=0&count=20";
-    this.data.totalCount = 0;
-    util.http(refreshUrl, this.processDoubanData);
-    //显示标题栏加载样式
-    wx.showNavigationBarLoading();
+    util.http(dataUrl, this.processDoubanData);
   },
-  processDoubanData: function(moviesDouban) {
+  processDoubanData: function (moviesDouban) {
     var movies = [];
     for (var idx in moviesDouban.subjects) {
       var subject = moviesDouban.subjects[idx];
@@ -76,18 +64,47 @@ Page({
       movies: totalEmpty,
       totalCount: this.data.totalCount += 20
     })
+    //停止下拉刷新
     wx.stopPullDownRefresh();
+    //隐藏标题栏加载样式
     wx.hideNavigationBarLoading();
+    //取消加载状态
+    this.setData({ isLoading: false })
   },
-  onReady: function(event) {
+  onReady: function (event) {
     wx.setNavigationBarTitle({
       title: this.data.navigateTitle
     })
   },
-  onMovieTap: function(event) {
+  onMovieTap: function (event) {
     var movieId = event.currentTarget.dataset.movieid;
     wx.navigateTo({
       url: '../movie-detail/movie-detail?id=' + movieId
     })
+  },
+  onReachBottom: function (event) {
+    //判断是否正在加载
+    if (this.data.isLoading) { return false; }
+
+    var nextUrl = this.data.requestUrl +
+      "?start=" + this.data.totalCount +
+      "&count=20";
+    util.http(nextUrl, this.processDoubanData);
+
+    //显示标题栏加载样式
+    wx.showNavigationBarLoading();
+    //加载状态
+    this.setData({ isLoading: true })
+  },
+  onPullDownRefresh: function () {
+    this.setData({
+      movies: {},
+      isEmpty: true
+    })
+    var refreshUrl = this.data.requestUrl +
+      "?start=0&count=20";
+    util.http(refreshUrl, this.processDoubanData);
+    //显示标题栏加载样式
+    wx.showNavigationBarLoading();
   }
 })

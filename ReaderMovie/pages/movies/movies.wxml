@@ -1,8 +1,9 @@
 <import src="movie-list/movie-list-template.wxml" />
+<import src="movie-grid/movie-grid-template.wxml"/>
 <view class="search">
-  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
-  <input placeholder="烈火英雄、哪吒" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur" />
-  <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
+  <icon type="search" class="search-img" size="13" color="#405f80"/>
+  <input type="text" placeholder="搜索内容" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur"/>
+  <image src="/images/icon/xx.png" bindtap="onCancelImgTap"  class="xx-img" wx:if="{{searchPanelShow}}"></image>
 </view>
 <view class="container" wx:if="{{containerShow}}">
   <view class="movies-template">

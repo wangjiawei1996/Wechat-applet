@@ -3,14 +3,14 @@
   <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
-        <text class="slogan">{{categoryTitle}}</text>
-        <view catchtap="onMoreTap" data-category="{{categoryTitle}}" class="more">
+        <text class="slogan">{{categoryTtile}}</text>
+        <view catchtap="onMoreTap" data-category="{{categoryTtile}}" class="more">
           <text class="more-text">更多</text>
           <image class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
       </view>
       <view class="movies-container">
-        <block wx:for="{{movies}}" wx:for-item="movie" wx:key="movies">
+        <block wx:for="{{movies}}" wx:for-item="movie">
           <template is="movieTemplate" data="{{...movie}}"></template>
         </block>
       </view>

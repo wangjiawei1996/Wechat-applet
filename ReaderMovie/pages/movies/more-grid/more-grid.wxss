@@ -1,9 +1,9 @@
 @import "../movie/movie-template.wxss";
-.single-view-container {
-  float: left;
-  margin-bottom: 40rpx;
+.grid-container{
+    height: 1300rpx;
+    margin: 40rpx 0rpx 40rpx 12rpx;
 }
-.grid-container {
-  height: 1300rpx;
-  margin: 40rpx 0 40rpx 6rpx;
+.single-view-container{
+    float: left;
+    margin-bottom: 40rpx;
 }

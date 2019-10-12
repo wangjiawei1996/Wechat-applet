@@ -1,16 +1,16 @@
-var util = require("../../../utils/util.js");
-var app = getApp();
-Page({
-  data: {
-    movie: {}
-  },
-  onLoad: function (options) {
-    var movieId = options.id;
-    var url = app.globalData.doubanBase + "/v2/movie/subject/" + movieId;
-    util.http(url, this.processDoubanData);
-  },
-  processDoubanData:function(data){
-    if(!data){
+var util = require("../../../../utils/util.js");
+class Movie {
+    constructor(url) {
+        this.url = url;
+    }
+
+    getMovieData(cb) {
+        this.cb = cb;
+        util.http(this.url, this.processDoubanData.bind(this));
+    }
+
+    processDoubanData(data) {
+        if(!data){
             return;
         }
         var director = {
@@ -42,15 +42,8 @@ Page({
             castsInfo: util.convertToCastInfos(data.casts),
             summary: data.summary
         }
-        this.setData({
-        movie: movie
-      })
-  },
-  viewMoviePostImg: function (event) {
-    var src = event.currentTarget.dataset.src;
-    wx.previewImage({
-      current: src,
-      urls: [src]
-    })
-  }
-})
+        this.cb = movie;
+    }
+}
+
+export {Movie}
